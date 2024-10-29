@@ -7,17 +7,27 @@
     <!-- Fuentes de Google -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
     <style>
+
+    
         body {
+       
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin-top: 200px;
+            box-sizing: border-box;
+
             font-family: 'Poppins', sans-serif;
             text-align: center;
             margin: 0;
-            padding: 50px 20px; /* Ajustado para espacios en móvil */
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            color: #fff;
-            box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+            padding-top: 50px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Degradado morado a azul */
+            color: #fff; /* Texto en blanco para mejor legibilidad */
         }
         h1 {
-            font-size: 2em; /* Ajuste para móviles */
+            font-size: 2.5em;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
@@ -28,7 +38,7 @@
         }
         .boton {
             padding: 15px 30px;
-            font-size: 18px;
+            font-size: 20px;
             margin: 20px;
             cursor: pointer;
             border: none;
@@ -36,11 +46,9 @@
             color: #fff;
             transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            max-width: 80%; /* Limita el ancho en móviles */
-            word-wrap: break-word; /* Permite que el texto se ajuste en varias líneas */
         }
         #botonSi {
-            background-color: #8e44ad;
+            background-color: #8e44ad; /* Morado */
         }
         #botonSi:hover {
             background-color: #732d91;
@@ -48,7 +56,7 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
         #botonNo {
-            background-color: #3498db;
+            background-color: #3498db; /* Azul */
             position: absolute;
         }
         #botonNo:hover {
@@ -56,24 +64,13 @@
             transform: translateY(-5px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
-        /* Medios de consulta para pantallas pequeñas */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 1.8em;
-            }
-            .boton {
-                font-size: 16px;
-                padding: 12px 25px;
-                margin: 15px;
-            }
-            #botones {
-                height: 150px; /* Reducir la altura en móviles */
-            }
-        }
     </style>
 </head>
 <body>
-    <h1>¿Mañana cenamos?</h1>
+
+    <main>
+    <h1>No tengo a Otto este Miércules! <br>
+        ¿Hablamos Manaña?</h1>
     <div id="botones">
         <button id="botonSi" class="boton">Sí</button>
         <button id="botonNo" class="boton">No</button>
@@ -90,24 +87,22 @@
             const anchoContenedor = botones.clientWidth - botonNo.offsetWidth;
             const altoContenedor = botones.clientHeight - botonNo.offsetHeight;
 
-            let nuevaPosicionX = Math.random() * anchoContenedor;
-            let nuevaPosicionY = Math.random() * altoContenedor;
-
-            // Asegurar que el botón no salga del contenedor
-            nuevaPosicionX = Math.max(0, Math.min(nuevaPosicionX, anchoContenedor));
-            nuevaPosicionY = Math.max(0, Math.min(nuevaPosicionY, altoContenedor));
+            const nuevaPosicionX = Math.random() * anchoContenedor;
+            const nuevaPosicionY = Math.random() * altoContenedor;
 
             botonNo.style.left = nuevaPosicionX + 'px';
             botonNo.style.top = nuevaPosicionY + 'px';
         }
 
         document.getElementById('botonSi').addEventListener('click', function() {
+            // Reemplaza la alerta con una animación o mensaje personalizado
             const h1 = document.querySelector('h1');
-            h1.textContent = '¡Genial! ¡Será una cita estupenda!';
+            h1.textContent = '¡Genial! ¡Será  estupendo!';
             h1.style.fontSize = '2em';
             h1.style.marginTop = '50px';
             document.getElementById('botones').style.display = 'none';
         });
     </script>
+    </main>
 </body>
 </html>
