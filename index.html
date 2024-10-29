@@ -12,11 +12,13 @@
             text-align: center;
             margin: 0;
             padding-top: 50px;
-            background-color: #f0f8ff; /* Azul claro */
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Degradado morado a azul */
+            color: #fff; /* Texto en blanco para mejor legibilidad */
         }
         h1 {
-            color: #2c3e50; /* Azul oscuro */
-            padding: 0 20px;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         #botones {
             margin-top: 50px;
@@ -25,28 +27,31 @@
         }
         .boton {
             padding: 15px 30px;
-            font-size: 18px;
+            font-size: 20px;
             margin: 20px;
             cursor: pointer;
             border: none;
-            border-radius: 5px;
+            border-radius: 50px;
             color: #fff;
-            transition: background-color 0.3s, transform 0.3s;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         #botonSi {
-            background-color: #28a745; /* Verde */
+            background-color: #8e44ad; /* Morado */
         }
         #botonSi:hover {
-            background-color: #218838;
-            transform: scale(1.05);
+            background-color: #732d91;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
         #botonNo {
-            background-color: #dc3545; /* Rojo */
+            background-color: #3498db; /* Azul */
             position: absolute;
         }
         #botonNo:hover {
-            background-color: #c82333;
-            transform: scale(1.05);
+            background-color: #1d6fa5;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
@@ -76,7 +81,12 @@
         }
 
         document.getElementById('botonSi').addEventListener('click', function() {
-            alert('¡Genial! ¡Será una cita estupenda!');
+            // Reemplaza la alerta con una animación o mensaje personalizado
+            const h1 = document.querySelector('h1');
+            h1.textContent = '¡Genial! ¡Será estupenda!';
+            h1.style.fontSize = '2em';
+            h1.style.marginTop = '50px';
+            document.getElementById('botones').style.display = 'none';
         });
     </script>
 </body>
